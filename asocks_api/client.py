@@ -56,7 +56,7 @@ class ASocksClient:
 
   @retry_on_exception(max_retries=3, delay=1)
   def refresh_ip(self, port_id: str) -> Dict[str, Any]:
-    return self._request("POST", f"proxy/refresh/{port_id}")
+    return self._request("GET", f"proxy/refresh/{port_id}")
   
   @retry_on_exception(max_retries=3, delay=1)
   def get_proxy_status(self, port_id: str) -> Dict[str, Any]:
